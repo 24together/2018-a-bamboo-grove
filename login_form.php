@@ -16,7 +16,26 @@
   </head>
 <body id="LoginForm">
 
-    <div class="container">
+  <nav class="navbar navbar-expand-sm bg-white navbar-white">
+          <!-- Brand/logo -->
+          <a class="navbar-brand" href="./main.php"style="color:aquamarine">a bamboo grove</a>
+
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item" >
+              <a class="nav-link" href="#" style="color:aquamarine">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"style="color:aquamarine">Link 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"style="color:aquamarine">Link 3</a>
+            </li>
+          </ul>
+        </nav>
+  
+   
+    <div class="container" style="margin-top:50px ">
     <span class="logo">
     <img src="./img/Bamboo.png" width="30px" height="30px" ></span>
     <span class="logo">
@@ -33,13 +52,13 @@
 
             <div class="form-group">
 
-                <input type="text" class="form-control" placeholder="ID">
+                <input type="text" name="id" class="form-control" placeholder="ID">
 
             </div>
 
             <div class="form-group">
 
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <input type="password" name="pw" class="form-control" id="inputPassword" placeholder="Password">
 
             </div>
 

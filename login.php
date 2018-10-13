@@ -6,7 +6,7 @@
     session_start();
 
     $id = requestValue("id");
-    $pw = requestValue("pw");
+    $pw = requestValue("pw");// 값을 담는다
 
     $mdao = new MemberDao();
     $member = $mdao -> getMember($id);//1차원 배열로 리턴해 준다

@@ -20,11 +20,20 @@
     function okGo($msg,$url){
         ?>
         <script>
+            alert('<?= $msg ?>');
             location.href = '<?= $url ?>';
         </script>
         <?php
-            exit();
     }
+    function goNow($url){
+              ?>
+             <script>
+                 location.href = '<?= $url ?>';
+
+            </script>
+             <?php
+                  exit();
+        }
     function readSessionVar($val){
         //$session = "\"".$val."\"";
         
@@ -41,7 +50,7 @@
             }else if($val=="age"){
                 return $_SESSION["age"];
             }
-        }
+        }else return "";
     }
  ?>    
     

@@ -47,7 +47,7 @@
         
         public function updateMember($id,$pw,$name,$age){
             try{
-                $sql = "update Bbmember set pw = :pw, name=:name. age=:age where id=:id";
+                $sql = "update Bbmember set pw = :pw, name=:name, age=:age where id=:id";
             
                 $pstmt =$this -> db-> prepare($sql);
                 
