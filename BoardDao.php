@@ -1,8 +1,17 @@
-<?php 
+   
+   <?php
+/*
+   writer title content regtime hits stars age
+   
+   insertMsg(  제목 이름 내용 나이대)
+   increaseHits(조회수)
+   setStar(별)
+   
+*/
     class BoardDao{
         private $db;
         
-        public function __constract(){
+        public function __construct(){
             try {
 			$this->db = new PDO("mysql:host=localhost;dbname=php", "root", "");
 
@@ -13,17 +22,19 @@
 		}
     }
         
-    public function insertMsg($title, $writer, $content) {
+    public function insertMsg($id,$title, $writer, $content, $age) {
 		// sql문 만들고.. insert문
 		// prepare 시키고
 		// 넘어온 값 binding 시키고
 		// 실행요청하고..
 		try {
-			$sql = "insert into board(title, writer, content) values(:title, :writer, :content)";
+			$sql = "insert into bbboard(id,title, writer, content,age) values(:id,:title, :writer, :content,:age)";
 			$pstmt = $this->db->prepare($sql);
 			$pstmt->bindValue(":title", $title, PDO::PARAM_STR);
+			$pstmt->bindValue(":id", $id, PDO::PARAM_STR);
 			$pstmt->bindValue(":writer", $writer, PDO::PARAM_STR);
 			$pstmt->bindValue(":content", $content, PDO::PARAM_STR);
+			$pstmt->bindValue(":age", $content, PDO::PARAM_INT);
 
 			$pstmt->execute();
 
@@ -39,8 +50,8 @@
 				2. prepare
 				3. binding X, execute O
 			*/
-			$sql = "select * from board";	
-			$pstmt = $this->db->prepare($sql);	
+			$sql = "select * from bbboard";	
+			$pstmt = $this->db->prepare("select * from bbboard");	
 			$pstmt->execute();
 			$msgs = $pstmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -53,7 +64,7 @@
 
 	public function getMsg($num) {
 		try {
-			$sql = "select * from board where num=:num";
+			$sql = "select * from bbboard where num=:num";
 			$pstmt = $this->db->prepare($sql);
 			$pstmt->bindValue(":num", $num, PDO::PARAM_STR);
 			$pstmt->execute();
@@ -69,7 +80,7 @@
 	public function increaseHits($num) {
 		try {
 			// update board set hits+1 where num=:num
-			$sql = "update board set hits=hits+1 where num=:num";
+			$sql = "update bbboard set hits=hits+1 where num=:num";
 			$pstmt = $this->db->prepare($sql);
 			$pstmt->bindValue(":num", $num, PDO::PARAM_INT);
 			$pstmt->execute();
@@ -77,6 +88,20 @@
 			exit($e->getMessage());
 		}
 	}
+        
+    public function setStars($num, $star){
+        try{
+            
+            $sql = "update bbboard set stars=(stars+:star), setstar=setstar+1 where num=:num";
+            $pstmt = $this -> db -> prepare($sql);
+            $pstmt->bindValue(":num",$num,PDO::PARAM_INT);
+            $pstmt->bindValue(":star",$star,PDO::PARAM_INT);
+            $pstmt->execute();
+            
+        }catch(PDOException $e){
+            exit($e->getMessage());
+        }
+    }
 
 	public function deleteMsg($num) {
 		try {
@@ -118,3 +143,5 @@
         
         
 }
+
+?>

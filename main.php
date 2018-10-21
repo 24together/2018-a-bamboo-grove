@@ -8,35 +8,26 @@
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
               <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
               <link href="./stylesheet.css" rel="stylesheet">
-                <style>
-                    .navbar-inverse .navbar-nav>.open>a
-                    {
-                            color: #fff;
-                            background-color: #D0F9EF";
-                    }
-                    .margin{
-                        margin:8px;
-                    }
-               </style>
+
     </head>
     <body >
-          <nav class="navbar navbar-inverse" style="border:2px solid #D0F9EF">
+          <nav class="navbar navbar-inverse" style="border:0px none white">
               <div class="container-fluid" style="background-color:white">
                        <form action="login_form.php">
                 <div class="navbar-header">
-                  <a class="navbar-brand" href="#" style="color:aquamarine">a bamboo grove</a>
+                  <a class="navbar-brand" href="#" style="color:#53853d">a bamboo grove</a>
                 </div>
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="#" style="background-color: #D0F9EF">Home</a></li>
-                  <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" href="#"style="color:aquamarine" 
-                   >Page 1 <span class="caret"></span></a>
+                  <li class="active"><a href="#" style="background-color:#53853d">Home</a></li>
+                  <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" href="#"style="color:#53853d" 
+                   >소통 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#" style="color:aquamarine">Page 1-1</a></li>
-                      <li><a href="#" style="color:aquamarine">Page 1-2</a></li>
-                      <li><a href="#" style="color:aquamarine">Page 1-3</a></li>
+                      <li><a href="./board/board.php" style="color:#53853d">게시판</a></li>
+                      <li><a href="./board/write_form.php" style="color:#53853d">게시글 쓰기</a></li>
+                      <li><a href="#" style="color:#53853d">Page 1-3</a></li>
                     </ul>
                   </li>
-                  <li><a href="#"style="color:aquamarine">Page 2</a></li>
+                  <li><a href="#"style="color:#53853d">Page 2</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
             
@@ -55,6 +46,7 @@
             }else{
         ?>
 <!--logout-->
+                  <li style="margin:15px">로그인 해주세요</li>
                   <li class="margin"><input type ="button" class="btn btn-default" id="navbnt" value=" login " onclick="location.href='login_form.php'"> </li>
                   <li class="margin"><input type="button" class="btn btn-default" id="navbnt" value=" Sign Up " onclick="location.href='member_join_form.php'"></li> 
 
@@ -73,9 +65,7 @@
         <div class="mainpage-div" >
         <div class="form-heading">
         <span class="logo">
-            <img src="./img/Bamboo_green.png" width="60px" height="60px" ></span>
-        <span class="logo">        
-  <h2 class="primary-h">당신의 대나무숲</h2></span>
+            <img src="./img/logo.png" height="80px" ></span>
           </div>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -90,25 +80,22 @@
 
       <div class="item active">
         <img src="./img/main1.png" >
-        <div class="carousel-caption">
-          <h3>Los Angeles</h3>
-          <p>LA is always so much fun!</p>
+        <div style="margin:20px" class="carousel-caption">
+          <img src="./img/script1.png" width="360px">
         </div>
       </div>
 
       <div class="item">
         <img src="./img/main2.png" >
-        <div class="carousel-caption">
-          <h3>Chicago</h3>
-          <p>Thank you, Chicago!</p>
+        <div style="margin:20px" class="carousel-caption">
+          <img src="./img/script2.png" width="360px">
         </div>
       </div>
     
       <div class="item">
         <img src="./img/main3.png">
-        <div class="carousel-caption">
-          <h3>New York</h3>
-          <p>We love the Big Apple!</p>
+        <div style="margin:20px"class="carousel-caption">
+          <img src="./img/script3.png" width="360px">
         </div>
       </div>
   
