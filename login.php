@@ -5,7 +5,9 @@
     
     session_start();
 
+
     $id = requestValue("id");
+    $pw = requestValue("pw");// 값을 담는다
     $pw = requestValue("pw");// 값을 담는다
 
     $mdao = new MemberDao();

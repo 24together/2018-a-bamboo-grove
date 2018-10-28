@@ -2,6 +2,9 @@
 body#LoginForm{ background-image:url("./img/background3.png"); background-repeat:no-repeat; background-position:center;
 
 }
+body#FreeForm{ background-image:url("./img/background2.png"); background-repeat:no-repeat; background-position:center;
+
+}
 
 .logo{
     display:inline-block;
@@ -68,12 +71,9 @@ body#LoginForm{ background-image:url("./img/background3.png"); background-repeat
 }
 .noresize {
     resize: none; /* 사용자 임의 변경 불가 */
-    resize: both; /* 사용자 변경이 모두 가능 */
-    resize: horizontal; /* 좌우만 가능 */
-    resize: vertical; /* 상하만 가능 */
 }
 .view-div {
-    max-width: 900px;
+    max-width: 97%;
     min-height: 77%;
     overflow: visible;
 
@@ -88,6 +88,9 @@ body#LoginForm{ background-image:url("./img/background3.png"); background-repeat
   margin-bottom:10px; 
 
 }
+.btn btn-light{
+               height:13px;
+           }
 .login-form{ text-align:center;  }
 .forgot a {
   color: #777777;
@@ -108,7 +111,6 @@ body#LoginForm{ background-image:url("./img/background3.png"); background-repeat
   text-align: left; margin-bottom:30px;
 }
 .botto-text {
-;
     color: #ffffff;
   font-size: 14px;
   margin: auto;

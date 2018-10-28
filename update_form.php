@@ -1,21 +1,13 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
-
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>대나무숲::회원정보수정</title>
-        <link href="./stylesheet.css" rel="stylesheet">
-          <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-          <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-          <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <?php require_once("./style.php"); ?>
     </head>
     <?php
-        require_once("MemberDao.php");
-        require_once("tools.php");
+        require_once("./MemberDao.php");
+        require_once("./tools.php");
         
         session_start();
         
@@ -26,7 +18,7 @@
     
         $age = $member["age"];
         if(!$member){
-            errorBack("[$uid]그런 사람은 없습니다.");
+            errorBack("$uid 로그인 해주세요");
             exit();
         }
     
