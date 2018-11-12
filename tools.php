@@ -52,5 +52,16 @@
             }
         }else return "";
     }
+    function bdURL($file,$num,$page){
+    $join="?";
+    if ($num) {
+        $file .= $join . "num=$num";
+        $join="&";
+    }
+    if($page)
+        $file .= $join."page=$page";
+
+    return $file;
+}
  ?>    
     

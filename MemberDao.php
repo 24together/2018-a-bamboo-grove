@@ -62,6 +62,32 @@
             }
             
         }
+        public function increaseCount($id){
+            try{
+                $sql = "update Bbmember set write_count = write_count+1 where id=:id";
+            
+                $pstmt =$this -> db-> prepare($sql);
+                
+                $pstmt->bindValue(":id", $id, PDO::PARAM_STR);
+                
+                $pstmt->execute();
+            }catch(PDOException $e){
+                exit($e->getMessage());
+            }
+            
+        }
+        
+        public function decreaseCount($id){
+            try{
+                $sql = "update Bbmember set Write_count = write_count-1 where id=:id";
+                
+                $pstmt = $this-> db->prepare($sql);
+                $pstmt->bindValue(":id",$id, PDO::PARAM_STR);
+                $pstmt->execute();
+            }catch(PDOException $e){
+                exit($e->getMessage());
+            }
+        }
         
     }
 ?>
